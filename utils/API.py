@@ -1,4 +1,5 @@
-from decouple import config
+import os
+
 import requests
 
 class Tmdb():
@@ -6,7 +7,8 @@ class Tmdb():
         self.url = "https://api.themoviedb.org"
         self.headers = {
             "accept": "application/json",
-            "Authorization": config("TMDB_API_KEY")
+            "Authorization": "Bearer " + os.getenv("TMDB_API_KEY")
+            # "Authorization": """Bearer ..."""
         }
     
     def get_movies(self) -> dict:
