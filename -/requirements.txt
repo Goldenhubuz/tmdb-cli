@@ -1,6 +1,0 @@
-icecream
-pydantic
-ruff
-pydantic
-colorama
-requests
